@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>game_page</title>
+        <link href="game.css" rel="stylesheet">
+    </head>
+    <body>
+        <h2>Can you guess the movie ?</h2>
+        <div class="timer">Time: <span id="time">0</span> sec</div>
+
+       <div class="frames" id="frameContainer"></div>
+
+       <div style="margin-top:20px;">
+       <input class="guess-text" type="text" id="guessInput" placeholder="Enter movie name">
+       <br><br>
+       <button class="guess" id="guessBtn"><strong>Guess</strong></button>
+       </div>
+
+       <div class="result" id="result"></div>
+       <div class="countdown" id="countdown"></div>
+
+       <script src="game.js"></script>
+    </body>
+</html>

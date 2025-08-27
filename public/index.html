@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <title>Guess the Movie</title>
+        <style>
+            .user-info {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .user-name {
+                margin-right: 10px;
+                color: #333;
+            }
+            
+            .logout-btn {
+                background-color: #f44336;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="user-info">
+            <span class="user-name" id="userName"></span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+        
+        <div class="heading">
+            <h1>Frame Paarunga Jii</h1>
+        </div>
+        <div class="app-body">
+            <button id="start" class="Play-btn">Play</button>
+        </div>
+        
+        <script>
+            // Check if user is logged in and display their name
+            fetch('/check-auth')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.authenticated) {
+                        document.getElementById('userName').textContent = data.user.displayName;
+                    } else {
+                        window.location.href = '/login.html';
+                    }
+                });
+                
+            function logout() {
+                fetch('/logout')
+                    .then(() => {
+                        window.location.href = '/login.html';
+                    });
+            }
+        </script>
+        
+        <script src="index.js"></script>
+    </body>
+</html>

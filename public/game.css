@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right,#05668d,#028090,#00a896,#02c39a,#f0f3bd);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 { 
+  color: red; 
+}
+
+.frames {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+.frame {
+  position: relative;
+  width: 160px;
+  height: 240px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.frame-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.frame.flipped .frame-inner {
+  transform: rotateY(180deg);
+}
+
+.frame-front, .frame-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.frame-front {
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.frame-back {
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+}
+
+.timer {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: black;
+}
+
+.result, .countdown {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.guess-text{
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 3px 15px cyan;
+    background-color: black;
+    color: white;
+}
+
+.guess{
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 5px;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    background: rgba(255,255,255,0.1);
+    color: white;
+
+}
+
+.guess:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    background: linear-gradient(to right, rgb(6, 3, 43), silver);
+
+
+}
