@@ -1,0 +1,59 @@
+body{
+    height: 100rem;
+    background: linear-gradient(to right,#05668d,#028090,#00a896,#02c39a,#f0f3bd)
+}
+
+.heading h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 5px #00f5d4,                 0 0 10px #00f5d4,
+                 0 0 20px #00f5d4,
+                 0 0 40px #00f5d4;
+}
+
+.app-body{
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Play-btn{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    color: white;
+    object-fit: fill;
+    background-position:center;
+    background-size: 250px;
+    border: 2px solid black;
+    text-shadow: 0 3px 15px #028090;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    background-image: url(https://www.meme-arsenal.com/memes/9121e37de63bc516996feed2667343db.jpg);
+
+}
+
+.Play-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    
+
+
+}
+
+.google-signin-btn {
+  display: inline-block;
+  background-color: #4285F4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.google-signin-btn:hover {
+  background-color: #357AE8;
+}
